@@ -25,7 +25,7 @@ class EmailerController {
 	String index(Map<String, Object> model) {
 		log.debug 'index() is executed!'
 
-		model.put('title', emailerService.getTitle('World'))
+		model.put('title', emailerService.getTitle('Dear!'))
 		model.put('msg', emailerService.getDesc())
 
 		return 'index'

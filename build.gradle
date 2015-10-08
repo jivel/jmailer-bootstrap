@@ -20,12 +20,12 @@ dependencies {
 }
 
 jettyRun{
-	contextPath = "spring4"
+	contextPath = "jmailer"
 	httpPort = 8080
 }
 
 jettyRunWar{
-	contextPath = "spring4"
+	contextPath = "jmailer"
 	httpPort = 8080
 }
 

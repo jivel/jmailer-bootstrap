@@ -3,8 +3,8 @@
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 
-	<display-name>Gradle + Spring MVC 4</display-name>
-	<description>Spring MVC web application</description>
+	<display-name>Jmailer</display-name>
+	<description>Emailer deliver service</description>
 
 	<!-- For web context -->
 	<servlet>

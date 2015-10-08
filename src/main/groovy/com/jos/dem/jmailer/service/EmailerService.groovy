@@ -12,12 +12,12 @@ class EmailerService {
 
 	String getDesc() {
 		log.debug "getDesc() is executed!"
-	  "Gradle + Spring MVC"
+	  "Jmailer home"
 	}
 
 	String getTitle(String name) {
 		log.debug "getTitle() is executed! name : ${name}"
-    "Hello ${name}"
+    "Welcome ${name}"
 	}
 
 }
