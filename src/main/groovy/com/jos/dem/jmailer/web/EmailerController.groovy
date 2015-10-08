@@ -1,4 +1,4 @@
-package com.jos.dem.helloworld.web
+package com.jos.dem.jmailer.web
 
 import java.util.Map
 
@@ -11,22 +11,22 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.servlet.ModelAndView
 
-import com.jos.dem.helloworld.service.HelloWorldService
+import com.jos.dem.jmailer.service.EmailerService
 
 @Controller
-class WelcomeController {
+class EmailerController {
 
   Logger log = LoggerFactory.getLogger(this.class)
 
   @Autowired
-  HelloWorldService helloWorldService
+  EmailerService emailerService
 
 	@RequestMapping(value = '/', method = RequestMethod.GET)
 	String index(Map<String, Object> model) {
 		log.debug 'index() is executed!'
 
-		model.put('title', helloWorldService.getTitle('World'))
-		model.put('msg', helloWorldService.getDesc())
+		model.put('title', emailerService.getTitle('World'))
+		model.put('msg', emailerService.getDesc())
 
 		return 'index'
 	}

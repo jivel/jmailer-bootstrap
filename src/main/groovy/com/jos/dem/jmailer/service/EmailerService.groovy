@@ -1,4 +1,4 @@
-package com.jos.dem.helloworld.service
+package com.jos.dem.jmailer.service
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service
 import org.springframework.util.StringUtils
 
 @Service
-class HelloWorldService {
+class EmailerService {
 
 	Logger log = LoggerFactory.getLogger(this.class)
 
