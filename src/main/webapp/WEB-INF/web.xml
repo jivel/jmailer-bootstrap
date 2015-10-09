@@ -29,7 +29,10 @@
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/web-config.xml</param-value>
+    <param-value>
+      /WEB-INF/web-config.xml,
+      classpath:/aop-appctx.xml
+    </param-value>
 	</context-param>
 
 </web-app>
