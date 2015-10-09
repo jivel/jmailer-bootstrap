@@ -1,14 +1,15 @@
 package com.jos.dem.jmailer.service
 
-import org.slf4j.Logger
-import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 import org.springframework.util.StringUtils
+
+import org.apache.commons.logging.Log
+import org.apache.commons.logging.LogFactory
 
 @Service
 class EmailerService {
 
-	Logger log = LoggerFactory.getLogger(this.class)
+  Log log = LogFactory.getLog(this.class)
 
 	String getDesc() {
 		log.debug "getDesc() is executed!"

@@ -5,14 +5,14 @@ import org.aspectj.lang.annotation.AfterThrowing
 import org.aspectj.lang.annotation.Aspect
 import org.springframework.stereotype.Component
 
-import org.slf4j.Logger
-import org.slf4j.LoggerFactory
+import org.apache.commons.logging.Log
+import org.apache.commons.logging.LogFactory
 
 @Aspect
 @Component
 class AfterThrowingAdvice {
 
-  Logger log = LoggerFactory.getLogger(this.class)
+  Log log = LogFactory.getLog(this.class)
 
   @AfterThrowing(pointcut="execution(* com.jos.dem.jmailer.controller.**.*(..))",throwing="customNameException")
   def afterReturningMethod(JoinPoint joinPoint, RuntimeException customNameException) {
