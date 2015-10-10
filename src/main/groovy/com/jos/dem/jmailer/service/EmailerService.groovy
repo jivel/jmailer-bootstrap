@@ -2,6 +2,7 @@ package com.jos.dem.jmailer.service
 
 import org.springframework.stereotype.Service
 import org.springframework.util.StringUtils
+import com.jos.dem.jmailer.exception.EmailerException
 
 import org.apache.commons.logging.Log
 import org.apache.commons.logging.LogFactory

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.servlet.ModelAndView
 import org.springframework.http.ResponseEntity
 import org.springframework.http.HttpStatus
-import java.lang.RuntimeException
 import com.google.gson.Gson
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET

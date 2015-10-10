@@ -14,10 +14,9 @@ class BeforeAdvice {
 
   Log log = LogFactory.getLog(this.class)
 
-  @Before("execution(* message(..))")
-  def beforeMethod() {
-    log.info 'Before method advice'
-    println "*************************************"
+  @Before("execution(* com.jos.dem.jmailer.web..**.*(..))")
+  def beforeAdvice() {
+    log.info 'Before advice'
   }
 
 }
