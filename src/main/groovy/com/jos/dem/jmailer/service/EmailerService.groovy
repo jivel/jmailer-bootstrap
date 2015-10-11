@@ -22,4 +22,8 @@ class EmailerService {
     "Welcome ${name}"
 	}
 
+  def sendEmail(){
+    log.debug 'Sending email'
+  }
+
 }

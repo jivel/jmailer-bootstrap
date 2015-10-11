@@ -45,6 +45,7 @@ class EmailerController {
     log.debug "json: ${json}"
     MessageCommand command = new Gson().fromJson(json, MessageCommand.class);
     log.info "Sending contact email: ${command.dump()}"
+    emailerService.sendEmail()
     return new ResponseEntity<String>("OK", HttpStatus.OK);
   }
 
