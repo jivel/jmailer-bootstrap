@@ -18,6 +18,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST
 
 import com.jos.dem.jmailer.service.EmailerService
 import com.jos.dem.jmailer.command.MessageCommand
+import com.jos.dem.jmailer.exception.BusinessException
 
 import org.apache.commons.logging.Log
 import org.apache.commons.logging.LogFactory
@@ -45,8 +46,12 @@ class EmailerController {
     log.debug "json: ${json}"
     MessageCommand command = new Gson().fromJson(json, MessageCommand.class);
     log.info "Sending contact email: ${command.dump()}"
-    emailerService.sendEmail()
-    return new ResponseEntity<String>("OK", HttpStatus.OK);
+    try{
+      emailerService.sendEmail()
+      return new ResponseEntity<String>("OK", HttpStatus.OK);
+    }catch (BusinessException be){
+      return new ResponseEntity<String>(be.message, HttpStatus.BAD_REQUEST);
+    }
   }
 
 }

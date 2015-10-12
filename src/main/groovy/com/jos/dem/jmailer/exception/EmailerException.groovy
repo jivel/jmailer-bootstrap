@@ -6,7 +6,7 @@ class EmailerException extends RuntimeException {
 
   @Override
   String getMessage() {
-    "Some error ocurred"
+    "Emailer exception"
   }
 
 }
