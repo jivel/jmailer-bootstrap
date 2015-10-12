@@ -12,15 +12,16 @@ class EmailerService {
 
   Log log = LogFactory.getLog(this.class)
 
-	String getDesc() {
-		log.debug "getDesc() is executed!"
-	  "Jmailer home"
+	String getTitle(String name) {
+    log.debug "GETTING title with name : ${name}"
+    "Hello ${name}"
 	}
 
-	String getTitle(String name) {
-		log.debug "getTitle() is executed! name : ${name}"
-    "Welcome ${name}"
+  String getDescription() {
+    log.debug "GETTING description"
+    "Jmailer is a service for delivering emails"
 	}
+
 
   def sendEmail(){
     log.debug 'Sending email'

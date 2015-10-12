@@ -24,12 +24,9 @@
 		<h1>${title}</h1>
 		<p>
 			<c:if test="${not empty msg}">
-				You are in ${msg}
+        About: ${msg}
 			</c:if>
 
-			<c:if test="${empty msg}">
-				Welcome Welcome!
-			</c:if>
 		</p>
 		<p>
 			<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>

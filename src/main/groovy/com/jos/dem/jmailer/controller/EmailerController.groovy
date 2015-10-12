@@ -33,9 +33,9 @@ class EmailerController {
 
   @RequestMapping(value = '/', method = GET)
   String index(Map<String, Object> model) {
-    log.debug 'index() is executed!'
-    model.put('title', emailerService.getTitle('Dear!'))
-    model.put('msg', emailerService.getDesc())
+    log.debug 'Calling index'
+    model.put('title', emailerService.getTitle('World!'))
+    model.put('msg', emailerService.getDescription())
 
     return 'index'
   }
