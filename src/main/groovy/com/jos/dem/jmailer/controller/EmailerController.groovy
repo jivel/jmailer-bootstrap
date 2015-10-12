@@ -1,4 +1,4 @@
-package com.jos.dem.jmailer.web
+package com.jos.dem.jmailer.controller
 
 import java.util.Map
 
