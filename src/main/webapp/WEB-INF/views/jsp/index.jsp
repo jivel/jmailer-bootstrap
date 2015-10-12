@@ -24,11 +24,7 @@
 		<h1>${title}</h1>
 		<p>
 			<c:if test="${not empty msg}">
-				You are in ${msg}
-			</c:if>
-
-			<c:if test="${empty msg}">
-				Welcome Welcome!
+				About: ${msg}
 			</c:if>
 		</p>
 		<p>
