@@ -10,7 +10,7 @@ repositories {
     mavenCentral()
 }
 
-def springVersion = '4.2.1.RELEASE'
+def springVersion = '4.1.7.RELEASE'
 def hibernateValidatorVersion = "5.2.2.Final"
 def aspectjVersion = '1.8.7'
 def currentEnvironment = project.hasProperty("environment")?environment:"development"
@@ -18,7 +18,6 @@ def currentEnvironment = project.hasProperty("environment")?environment:"develop
 dependencies {
 
 	compile "org.springframework:spring-webmvc:${springVersion}"
-	compile 'javax.servlet:jstl:1.2'
   compile 'org.codehaus.groovy:groovy:2.4.5'
   compile "org.hibernate:hibernate-validator:${hibernateValidatorVersion}"
   compile 'log4j:log4j:1.2.17'
