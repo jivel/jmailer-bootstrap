@@ -1,12 +1,10 @@
 package com.jos.dem.jmailer.service.impl
 
-import com.tim.one.service.LoggerService
-
-import javax.jms.JMSException
 import javax.jms.Message
 import javax.jms.ObjectMessage
 import javax.jms.Session
 import javax.jms.Destination
+import javax.jms.JMSException
 
 import org.springframework.jms.core.JmsTemplate
 import org.springframework.jms.core.MessageCreator
@@ -14,6 +12,8 @@ import org.springframework.jms.core.MessageCreator
 import org.springframework.stereotype.Service
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
+
+import com.jos.dem.jmailer.service.LoggerService
 
 import org.apache.commons.logging.Log
 import org.apache.commons.logging.LogFactory
