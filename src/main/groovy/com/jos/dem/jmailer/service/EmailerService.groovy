@@ -22,7 +22,6 @@ class EmailerService {
     "Jmailer is a service for delivering emails"
 	}
 
-
   def sendEmail(){
     log.debug 'Sending email'
     throw new EmailerException()
