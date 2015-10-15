@@ -24,7 +24,6 @@ class EmailerService {
 
   def sendEmail(){
     log.debug 'Sending email'
-    throw new EmailerException()
   }
 
 }
