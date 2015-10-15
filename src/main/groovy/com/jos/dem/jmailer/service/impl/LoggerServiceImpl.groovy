@@ -11,7 +11,6 @@ import org.springframework.jms.core.MessageCreator
 
 import org.springframework.stereotype.Service
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.beans.factory.annotation.Qualifier
 
 import com.jos.dem.jmailer.service.LoggerService
 
@@ -25,7 +24,6 @@ class LoggerServiceImpl implements LoggerService {
   JmsTemplate template
 
   @Autowired
-  @Qualifier("logger")
   Destination logger
 
   Log log = LogFactory.getLog(getClass())
