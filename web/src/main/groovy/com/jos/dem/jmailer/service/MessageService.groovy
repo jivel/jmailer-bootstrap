@@ -2,8 +2,8 @@ package com.jos.dem.jmailer.service
 
 import com.jos.dem.jmailer.command.MessageCommand
 
-interface NotificationService {
+interface MessageService {
 
-  void sendNotification(MessageCommand command)
+  void message(final MessageCommand command)
 
 }
