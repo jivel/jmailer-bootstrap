@@ -28,8 +28,8 @@ class MessageServiceImpl implements MessageService {
   Log log = LogFactory.getLog(getClass())
 
   void message(final MessageCommand command) {
-    log.info("CALLING Message")
-    log.info("command: " + ToStringBuilder.reflectionToString(command))
+    log.info "CALLING Message"
+
     template.send(destination, new MessageCreator() {
       Message createMessage(Session session) throws JMSException {
       ObjectMessage message = session.createObjectMessage()

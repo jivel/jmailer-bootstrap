@@ -21,7 +21,7 @@ class NotificationServiceImpl implements NotificationService {
   private Log log = LogFactory.getLog(getClass())
 
   @Override
-  void sendNotification(MessageCommand command) {
+  void sendNotification(MessageCommand messageCommand) {
     log.info "messageCommand: ${messageCommand.dump()}"
     def (subject, templateName) = obtainSubjectAndResourceToSendNotification(messageCommand)
     def data = [subject:subject, templateName:templateName, bean:messageCommand]
