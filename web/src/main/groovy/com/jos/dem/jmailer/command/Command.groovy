@@ -1,3 +1,5 @@
 package com.jos.dem.jmailer.command
 
-interface Command {}
+import java.io.Serializable
+
+interface Command extends Serializable {}

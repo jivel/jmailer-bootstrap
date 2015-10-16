@@ -18,6 +18,7 @@
   </amq:broker>
 
   <!--  ActiveMQ Destination  -->
+  <amq:queue id="destination" physicalName="jmsMessageListener" />
   <amq:queue id="logger" physicalName="loggerMessageListener" />
 
   <!-- JMS ConnectionFactory to use, configuring the embedded broker using XML -->
@@ -41,6 +42,7 @@
   <jms:listener-container container-type="default"
     connection-factory="jmsConsumerConnectionFactory"
     acknowledge="auto">
+    <jms:listener destination="jmsMessageListener" ref="jmsMessageListener" />
     <jms:listener destination="loggerMessageListener" ref="loggerMessageListener" />
   </jms:listener-container>
 

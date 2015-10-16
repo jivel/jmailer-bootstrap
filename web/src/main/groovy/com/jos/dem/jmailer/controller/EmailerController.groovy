@@ -44,7 +44,7 @@ class EmailerController {
     MessageCommand command = new Gson().fromJson(json, MessageCommand.class)
     log.info "Sending contact email: ${command.email}"
     try{
-      emailerService.sendEmail()
+      emailerService.sendEmail(command)
       return new ResponseEntity<String>("OK", HttpStatus.OK);
     }catch (BusinessException be){
       return new ResponseEntity<String>(be.message, HttpStatus.BAD_REQUEST);
