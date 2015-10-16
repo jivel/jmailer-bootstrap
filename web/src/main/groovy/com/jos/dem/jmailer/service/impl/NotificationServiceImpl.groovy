@@ -29,6 +29,7 @@ class NotificationServiceImpl implements NotificationService {
   }
 
   private def obtainSubjectAndResourceToSendNotification(MessageCommand messageCommand){
+    log.info "emailProperties: ${emailProperties.dump()}"
     String templateKey = "${messageCommand.type.toString()}_PATH"
     String subjectKey = "${messageCommand.type.toString()}_SUBJECT"
 
