@@ -1,7 +1,7 @@
-package com.jos.dem.integration;
+package com.jos.dem.jmailer.integration;
 
 import java.util.Map;
 
-public interface MailService {
+interface MailService {
 	void sendMailWithEngine(String email,Map model,String subject,String template);
 }

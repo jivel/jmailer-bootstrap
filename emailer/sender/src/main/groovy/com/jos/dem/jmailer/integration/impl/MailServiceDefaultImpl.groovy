@@ -1,4 +1,4 @@
-package com.jos.dem.integration.impl;
+package com.jos.dem.jmailer.integration.impl;
 
 import java.util.Map;
 
@@ -13,12 +13,12 @@ import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 
-import com.jos.dem.integration.MailService;
+import com.jos.dem.jmailer.integration.MailService;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 
-@Service("mailService")
+@Service
 public class MailServiceDefaultImpl implements MailService {
 
   @SuppressWarnings("unused")
@@ -28,9 +28,9 @@ public class MailServiceDefaultImpl implements MailService {
   private Configuration configuration;
   @Autowired
   private JavaMailSender javaMailSender;
-  
+
   private String sender = "contact@josdem.io";
-  
+
   public void sendMailWithEngine(final String email, final Map model, final String subject, final String template) {
     MimeMessagePreparator preparator = new MimeMessagePreparator() {
       public void prepare(MimeMessage mimeMessage) throws Exception {
