@@ -25,24 +25,16 @@ subprojects {
 
 project(":emailer:sender"){
   dependencies{
-    compile "org.codehaus.groovy:groovy:${groovyVersion}"
-    compile "org.springframework.integration:spring-integration-mail:4.0.4.RELEASE"
+    compile "org.codehaus.groovy:groovy:$groovyVersion"
+    compile 'org.springframework.integration:spring-integration-mail:4.2.0.RELEASE'
+    compile "org.freemarker:freemarker:2.3.23"
     compile 'javax.mail:mail:1.4.7'
-    compile "org.freemarker:freemarker:2.3.20"
   }
 }
 
 project(":emailer:formatter"){
   dependencies{
-    compile "org.springframework:spring-orm:$springVersion"
-    testCompile "org.springframework:spring-test:$springVersion"
-    compile "org.springframework:spring-context-support:$springVersion"
-    compile "org.springframework:spring-tx:$springVersion"
-    compile "org.springframework:spring-expression:$springVersion"
-    compile "org.apache.commons:commons-lang3:3.0.1"
     compile "javax.jms:jms-api:$jmsApiVersion"
-    compile "commons-io:commons-io:1.4"
-    compile "javassist:javassist:$javassistVersion"
     compile "org.hibernate:hibernate-validator:$hibernateValidatorVersion"
     compile 'org.apache.activemq:activemq-spring:5.12.0'
     compile project(":emailer:sender")
@@ -64,10 +56,10 @@ project(":web"){
 
   dependencies {
 
-    compile "org.springframework:spring-webmvc:${springVersion}"
-    compile "org.springframework:spring-jms:${springVersion}"
-    compile "org.aspectj:aspectjrt:${aspectjVersion}"
-    compile "org.aspectj:aspectjweaver:${aspectjVersion}"
+    compile "org.springframework:spring-webmvc:$springVersion"
+    compile "org.springframework:spring-jms:$springVersion"
+    compile "org.aspectj:aspectjrt:$aspectjVersion"
+    compile "org.aspectj:aspectjweaver:$aspectjVersion"
     compile 'com.google.code.gson:gson:2.2.2'
     compile 'log4j:log4j:1.2.17'
     compile 'javax.servlet:servlet-api:2.5'
