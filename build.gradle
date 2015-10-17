@@ -43,8 +43,6 @@ project(":web"){
   sourceCompatibility = 1.8
   targetCompatibility = 1.8
 
-
-
   dependencies {
 
     compile "org.springframework:spring-webmvc:$springVersion"
