@@ -36,7 +36,6 @@ project(":emailer:formatter"){
 }
 
 project(":web"){
-  apply plugin: 'groovy'
   apply plugin: 'war'
   apply plugin: 'jetty'
 
@@ -53,7 +52,6 @@ project(":web"){
     compile 'log4j:log4j:1.2.17'
     compile 'javax.servlet:servlet-api:2.5'
     compile project(":emailer:formatter")
-
   }
 
   jettyRun{
@@ -67,24 +65,17 @@ project(":web"){
   }
 
   println "Setting environment to: ${currentEnvironment}"
-
-  def filesToInclude = [
-  "*-${currentEnvironment}.properties"
-  ]
-
-  def toDirectory = 'src/main/resources/config'
   task settingEnvironment(type:Copy) {
     from jmailerConfigurationDir
-    into toDirectory
-    include filesToInclude
+    into 'src/main/resources/config'
+    include "emailer-${currentEnvironment}.properties"
     rename { String fileName -> fileName.replace("-${currentEnvironment}", '') }
   }
 
   task settingLog4jProperties(type:Copy){
-    from "${System.getProperty('user.home')}/.jmailer/log4j-${currentEnvironment}.properties"
+    from jmailerConfigurationDir
     into "src/main/resources/"
+    include "log4j-${currentEnvironment}.properties"
     rename { String fileName -> fileName.replace("-${currentEnvironment}", '') }
   }
-
-  processResources.dependsOn "settingEnvironment","settingLog4jProperties"
 }
