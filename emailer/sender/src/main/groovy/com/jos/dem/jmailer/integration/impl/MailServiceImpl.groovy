@@ -26,14 +26,14 @@ class MailServiceImpl implements MailService {
 
   Log log = LogFactory.getLog(getClass())
 
-  void sendMailWithTemplate(final String email, final String sender, final Map model, final String subject, final String template) {
+  void sendMailWithTemplate(final Map values, final Map model, final String template) {
     MimeMessagePreparator preparator = new MimeMessagePreparator() {
       void prepare(MimeMessage mimeMessage) throws Exception {
         MimeMessageHelper message = new MimeMessageHelper(mimeMessage, true)
         Template myTemplate = configuration.getTemplate(template)
-        message.setTo(email)
-        message.setFrom(sender)
-        message.setSubject(subject)
+        message.setTo(values.email)
+        message.setFrom(values.sender)
+        message.setSubject(values.subject)
         String text = FreeMarkerTemplateUtils.processTemplateIntoString(myTemplate, model)
         message.setText(text, true)
       }
