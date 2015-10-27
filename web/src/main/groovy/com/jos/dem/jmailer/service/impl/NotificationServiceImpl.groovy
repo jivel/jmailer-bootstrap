@@ -28,7 +28,7 @@ class NotificationServiceImpl implements NotificationService {
     sendNotificationWithData(data)
   }
 
-  private def obtainSubjectAndResourceToSendNotification(MessageCommand messageCommand){
+  def obtainSubjectAndResourceToSendNotification(MessageCommand messageCommand){
     String templateKey = "${messageCommand.type.toString()}_PATH"
     String subjectKey = "${messageCommand.type.toString()}_SUBJECT"
 
@@ -40,7 +40,7 @@ class NotificationServiceImpl implements NotificationService {
     [subject, templateName]
   }
 
-  private void sendNotificationWithData(emailData){
+  void sendNotificationWithData(emailData){
     String templateName = emailData.templateName
     def bean = emailData.bean
     String subject = emailData.subject
