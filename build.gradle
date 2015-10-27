@@ -65,7 +65,9 @@ project(":web"){
   }
 
   println "Setting environment to: ${currentEnvironment}"
+
   task settingEnvironment(type:Copy) {
+    println 'task: settingEnvironment'
     from jmailerConfigurationDir
     into 'src/main/resources/config'
     include "emailer-${currentEnvironment}.properties"
@@ -78,4 +80,6 @@ project(":web"){
     include "log4j-${currentEnvironment}.properties"
     rename { String fileName -> fileName.replace("-${currentEnvironment}", '') }
   }
+
+  processResources.dependsOn "settingEnvironment", "settingLog4jProperties"
 }

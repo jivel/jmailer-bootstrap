@@ -2,3 +2,4 @@
 build
 src/main/resources/*.properties
 web/src/main/resources/config/*.properties
+emailer/formatter/src/main/resources/config
