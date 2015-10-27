@@ -24,8 +24,8 @@ class NotificationServiceImpl implements NotificationService {
   @Override
   void sendNotification(MessageCommand messageCommand) {
     log.info "messageCommand: ${messageCommand.dump()}"
-    def (subject, templateName) = obtainSubjectAndResourceToSendNotification(messageCommand)
-    def data = [subject:subject, templateName:templateName, bean:messageCommand]
+    def (sender, subject, templateName) = obtainSubjectAndResourceToSendNotification(messageCommand)
+    def data = [sender:sender, subject:subject, templateName:templateName, bean:messageCommand]
     sendNotificationWithData(data)
   }
 
@@ -34,17 +34,19 @@ class NotificationServiceImpl implements NotificationService {
     String subjectKey = "${messageCommand.type.toString()}_SUBJECT"
 
     String templateName = properties.getProperty(templateKey)
+    String sender = properties.getProperty(ApplicationConstants.SENDER)
     String subject = properties.getProperty(subjectKey)
 
     log.info("Sending email with subject: " + subject)
 
-    [subject, templateName]
+    [sender, subject, templateName]
   }
 
   void sendNotificationWithData(emailData){
     String templateName = emailData.templateName
     def bean = emailData.bean
+    String sender = emailData.sender
     String subject = emailData.subject
-    mailService.sendMailWithEngine(bean.email, bean.properties, subject, templateName)
+    mailService.sendMailWithEngine(bean.email, bean.sender, bean.properties, subject, templateName)
   }
 }
