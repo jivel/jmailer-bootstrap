@@ -67,7 +67,6 @@ project(":web"){
   println "Setting environment to: ${currentEnvironment}"
 
   task settingEnvironment(type:Copy) {
-    println 'task: settingEnvironment'
     from jmailerConfigurationDir
     into 'src/main/resources/config'
     include "emailer-${currentEnvironment}.properties"
