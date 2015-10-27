@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service
 import com.jos.dem.jmailer.integration.MailService
 import com.jos.dem.jmailer.service.NotificationService
 import com.jos.dem.jmailer.command.MessageCommand
+import com.jos.dem.jmailer.constant.ApplicationConstants
 
 import org.apache.commons.logging.Log
 import org.apache.commons.logging.LogFactory
@@ -47,6 +48,6 @@ class NotificationServiceImpl implements NotificationService {
     def bean = emailData.bean
     String sender = emailData.sender
     String subject = emailData.subject
-    mailService.sendMailWithEngine(bean.email, bean.sender, bean.properties, subject, templateName)
+    mailService.sendMailWithEngine(bean.email, sender, bean.properties, subject, templateName)
   }
 }

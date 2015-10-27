@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils
 
 import com.jos.dem.jmailer.integration.MailService
-import com.jos.dem.jmailer.constant.ApplicationConstants
 
 import freemarker.template.Configuration
 import freemarker.template.Template
