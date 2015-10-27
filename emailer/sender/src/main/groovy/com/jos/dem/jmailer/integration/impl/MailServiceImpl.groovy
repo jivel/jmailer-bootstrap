@@ -17,7 +17,7 @@ import org.apache.commons.logging.Log
 import org.apache.commons.logging.LogFactory
 
 @Service
-class MailServiceDefaultImpl implements MailService {
+class MailServiceImpl implements MailService {
 
   @Autowired
   Configuration configuration
@@ -26,7 +26,7 @@ class MailServiceDefaultImpl implements MailService {
 
   Log log = LogFactory.getLog(getClass())
 
-  void sendMailWithEngine(final String email, final String sender, final Map model, final String subject, final String template) {
+  void sendMailWithTemplate(final String email, final String sender, final Map model, final String subject, final String template) {
     MimeMessagePreparator preparator = new MimeMessagePreparator() {
       void prepare(MimeMessage mimeMessage) throws Exception {
         MimeMessageHelper message = new MimeMessageHelper(mimeMessage, true)
