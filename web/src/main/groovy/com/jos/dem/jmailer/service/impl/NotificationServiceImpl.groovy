@@ -48,6 +48,6 @@ class NotificationServiceImpl implements NotificationService {
     def bean = emailData.bean
     String sender = emailData.sender
     String subject = emailData.subject
-    mailService.sendMailWithEngine(bean.email, sender, bean.properties, subject, templateName)
+    mailService.sendMailWithTemplate(bean.email, sender, bean.properties, subject, templateName)
   }
 }
