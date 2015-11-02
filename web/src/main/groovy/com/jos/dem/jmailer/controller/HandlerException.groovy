@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletResponse
 import org.springframework.stereotype.Component
 import org.springframework.http.ResponseEntity
 import org.springframework.web.servlet.ModelAndView
-import com.jos.dem.jmailer.exception.BusinessException
 
 import org.apache.commons.logging.Log
 import org.apache.commons.logging.LogFactory

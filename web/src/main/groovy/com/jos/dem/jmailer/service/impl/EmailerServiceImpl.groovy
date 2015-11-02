@@ -31,7 +31,8 @@ class EmailerServiceImpl implements EmailerService {
 
   def sendEmail(MessageCommand command){
     log.debug 'Sending email'
-    messageService.message(command)
+    //messageService.message(command)
+    throw new EmailerException('Email exception')
   }
 
 }
