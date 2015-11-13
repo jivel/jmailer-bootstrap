@@ -1,4 +1,4 @@
-package com.jos.dem.controller
+package com.jos.dem.jmailer.controller
 
 import org.springframework.web.servlet.HandlerExceptionResolver
 import org.springframework.http.HttpStatus

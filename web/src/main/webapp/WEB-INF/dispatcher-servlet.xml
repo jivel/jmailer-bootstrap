@@ -30,4 +30,6 @@
 
   <mvc:annotation-driven />
 
+  <bean class="com.jos.dem.jmailer.controller.HandlerException" />
+
 </beans>
