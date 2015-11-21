@@ -13,7 +13,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.jos.dem.integration.MailService;
-import com.jos.dem.vo.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({ "classpath:/mail-context.xml" })
@@ -27,11 +26,7 @@ public class TestMailService {
 
   @Test
   public void testMail() throws MessagingException {
-    User user = new User();
-    user.setUserName("Jose");
-    user.setEmail(destEmail);
-    Map model = new HashMap();
-    model.put("user", user);
-    mailService.sendMailWithEngine(destEmail, model, "Mail con Template", "template.ftl");
+    Map values = new HashMap();
+    Map model = new HashMap();                                                                                    mailService.sendMailWithTemplate(values, model, "template.ftl");
   }
 }
