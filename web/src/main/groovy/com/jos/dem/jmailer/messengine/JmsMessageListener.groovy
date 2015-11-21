@@ -20,7 +20,7 @@ class JmsMessageListener implements MessageListener {
 
   Log log = LogFactory.getLog(getClass())
 
-  def void onMessage(Message message) {
+  void onMessage(Message message) {
     log.info 'Email message received'
 
     Object command =  ((ObjectMessage) message).getObject()
