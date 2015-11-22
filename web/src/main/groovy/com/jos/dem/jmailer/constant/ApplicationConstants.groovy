@@ -1,5 +1,6 @@
 package com.jos.dem.jmailer.constant
 
 interface ApplicationConstants {
-  String SENDER = 'email.sender'
+  final String SENDER = 'email.sender'
+  final String WHITE_LIST = 'white.list'
 }
