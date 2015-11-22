@@ -30,7 +30,7 @@ class EmailerServiceImpl implements EmailerService {
 	}
 
   def sendEmail(MessageCommand command){
-    log.debug 'Sending email'
+    log.info 'Sending email ${command.email}'
     messageService.message(command)
   }
 
