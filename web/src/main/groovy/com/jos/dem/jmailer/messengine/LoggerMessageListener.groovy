@@ -18,7 +18,7 @@ class LoggerMessageListener implements MessageListener {
   def void onMessage(Message message) {
     def data =  ((ObjectMessage) message).getObject()
     String dataToString = data.collect { k, v -> v }.join(';')
-    log.info dataToString
+    log.warn dataToString
   }
 
 }

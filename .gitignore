@@ -2,4 +2,5 @@
 build
 src/main/resources/*.properties
 web/src/main/resources/config/*.properties
+web/src/main/resources/log4j.properties
 emailer/formatter/src/main/resources/config

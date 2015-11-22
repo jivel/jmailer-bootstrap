@@ -40,7 +40,7 @@ class LoggerInterceptor implements HandlerInterceptor {
     }
 
     loggerService.notifyRequest(data)
-      return true
+    return true
   }
 
 
