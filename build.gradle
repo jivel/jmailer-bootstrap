@@ -70,7 +70,7 @@ project(":web"){
   task settingEnvironment(type:Copy) {
     from jmailerConfigurationDir
     into 'src/main/resources/config'
-    include "emailer-${currentEnvironment}.properties"
+    include "*-${currentEnvironment}.properties"
     rename { String fileName -> fileName.replace("-${currentEnvironment}", '') }
   }
 

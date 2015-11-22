@@ -60,19 +60,19 @@
     <constructor-arg ref="clientDetails" />
   </bean>
 
-  <bean id="clientDetails" class="com.tim.web.security.oauth2.GuestServiceImpl">
+  <bean id="clientDetails" class="com.jos.dem.oauth2.GuestServiceImpl">
     <property name="integraKey" value="client" />
     <property name="integraSecret" value="e6e68d8a-baf9-4880-aece-7774ffd4fb22" />
   </bean>
 
-  <bean id="userValidator" class="com.tim.web.security.oauth2.UserValidatorImpl" />
+  <bean id="userValidator" class="com.jos.dem.oauth2.UserValidatorImpl" />
 
   <sec:authentication-manager id="userAuthenticationManager">
     <sec:authentication-provider ref="customUserAuthenticationProvider" />
   </sec:authentication-manager>
 
   <bean id="customUserAuthenticationProvider"
-    class="com.tim.web.security.oauth2.UserAuthenticationProvider">
+    class="com.jos.dem.oauth2.UserAuthenticationProvider">
   </bean>
 
   <oauth:authorization-server
