@@ -33,10 +33,12 @@ class LoggerInterceptor implements HandlerInterceptor {
     data.requestURL = request.requestURL
     data.parameters = request.parameterMap
 
+    println "whitelist: ${whiteList}"
+
     if(!whiteList.contains(request.remoteHost)){
       data.warn = "UNAUTORIZED IP was detected in attempt to access to resource"
       loggerService.notifyRequest(data)
-      return false;
+      return false
     }
 
     loggerService.notifyRequest(data)
