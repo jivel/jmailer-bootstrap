@@ -40,7 +40,7 @@ class LoggerInterceptorSpec extends Specification {
     when:"We preHandle request"
      request.remoteHost >> '189.217.63.188'
      def result = interceptor.preHandle(request, response, new Object())
-    then:"We expect access"
+    then:"We expect access denied"
      !result
      1 * loggerService.notifyRequest(_ as Map)
   }

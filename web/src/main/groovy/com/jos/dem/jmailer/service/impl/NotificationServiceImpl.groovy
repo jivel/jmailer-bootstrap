@@ -23,7 +23,7 @@ class NotificationServiceImpl implements NotificationService {
   private Log log = LogFactory.getLog(getClass())
 
   @Override
-  void sendNotification(MessageCommand messageCommand) {
+  Boolean sendNotification(MessageCommand messageCommand) {
     def (subject, templateName) = obtainSubjectAndResourceToSendNotification(messageCommand)
     def data = [email:messageCommand.email, subject:subject, templateName:templateName]
     mailService.sendMailWithTemplate(data, messageCommand.properties, data.templateName)
@@ -31,12 +31,14 @@ class NotificationServiceImpl implements NotificationService {
 
   def obtainSubjectAndResourceToSendNotification(MessageCommand messageCommand){
     String templateKey = "${messageCommand.type.toString()}_PATH"
+    println templateKey
     String subjectKey = "${messageCommand.type.toString()}_SUBJECT"
 
     String templateName = properties.getProperty(templateKey)
+    println templateName
     String subject = properties.getProperty(subjectKey)
 
-    log.info("Sending email with subject: " + subject)
+    log.info "Sending email with subject: ${subject}"
     [subject, templateName]
   }
 
