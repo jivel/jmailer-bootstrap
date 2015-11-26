@@ -43,7 +43,6 @@ project(":web"){
   targetCompatibility = 1.8
 
   dependencies {
-
     compile "org.springframework:spring-webmvc:$springVersion"
     compile "org.springframework:spring-jms:$springVersion"
     compile "org.aspectj:aspectjrt:$aspectjVersion"
